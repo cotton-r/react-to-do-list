@@ -2,9 +2,6 @@ import React from 'react';
 import './TabBar.css';
 
 class TabBar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
