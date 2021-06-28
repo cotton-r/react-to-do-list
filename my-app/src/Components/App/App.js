@@ -1,6 +1,8 @@
 import React from 'react';
 import './App.css';
 
+import TabBar from '../TabBar/TabBar';
+
 class App extends React.Component {
   constructor(props) {
   super(props);    
@@ -14,6 +16,7 @@ class App extends React.Component {
           To-Do List
         </h1>
         <div className="App">
+          <TabBar />
           {/* <ToDoList /> */}
           {/* <CompletedList /> */}
         </div>

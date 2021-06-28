@@ -1,0 +1,19 @@
+.TabBar {
+    width: 100%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.Tab-button {
+    width: 50%;
+    text-decoration: none;
+    border-style: none;
+    background-color: rgb(230, 204, 93);
+}
+
+.divider {
+    height: 100%;
+    width: 1px;
+    background-color: black;
+}
