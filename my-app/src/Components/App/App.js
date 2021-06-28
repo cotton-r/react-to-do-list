@@ -1,5 +1,5 @@
 import React from 'react';
-import '..App.css';
+import './App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -14,7 +14,8 @@ class App extends React.Component {
           To-Do List
         </h1>
         <div className="App">
-          
+          {/* <ToDoList /> */}
+          {/* <CompletedList /> */}
         </div>
       </div>
     )
