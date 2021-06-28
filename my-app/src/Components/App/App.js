@@ -5,7 +5,11 @@ import TabBar from '../TabBar/TabBar';
 
 class App extends React.Component {
   constructor(props) {
-  super(props);    
+    super(props);    
+
+    this.state= {
+      
+    }
   }
 
 
