@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import '..App.css';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,9 +9,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <h1 className="mainTitle">
-        To-Do List
-      </h1>
+      <div>
+        <h1 className="mainTitle">
+          To-Do List
+        </h1>
+        <div className="App">
+          
+        </div>
+      </div>
     )
   }
 }
