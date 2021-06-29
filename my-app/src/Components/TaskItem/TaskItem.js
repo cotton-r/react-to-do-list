@@ -5,9 +5,14 @@ class TaskItem extends React.Component {
 
     isCompleted() {
         if (this.props.completed) {
-            return <input type="checkbox" checked />
+            return <input 
+                    type="checkbox" 
+                    disabled="disabled" 
+                    checked="checked" 
+                    className="isCompleted" 
+                />
         } else {
-            return <input type="checkbox" />
+            return <input type="checkbox" className="isCompleted" />
         }
     }
     
@@ -21,4 +26,4 @@ class TaskItem extends React.Component {
     }
 }
 
-export default TaskItem;
+export default TaskItem

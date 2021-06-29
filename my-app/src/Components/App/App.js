@@ -3,20 +3,23 @@ import './App.css';
 
 import TabBar from '../TabBar/TabBar';
 import ToDoList from '../ToDoList/ToDoList';
+import TaskItem from '../TaskItem/TaskItem';
 
 class App extends React.Component {
   constructor(props) {
     super(props);    
 
     this.state= {
-      task: ''
+      tasks: []
     }
 
     this.addItem = this.addItem.bind(this);
   }
 
   addItem(task) {
-    this.setState({ task: task });
+    let newStateArray = this.state.tasks.slice();
+    newStateArray.unshift(task);
+    this.setState({ tasks: newStateArray });
   }
 
   render() {
@@ -29,6 +32,7 @@ class App extends React.Component {
           <TabBar />
           <ToDoList 
             addItem={this.addItem}
+            tasks={this.state.tasks}
           />
           {/* <CompletedList /> */}
         </div>

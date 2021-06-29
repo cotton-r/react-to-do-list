@@ -17,15 +17,26 @@ class InputField extends React.Component {
         this.setState({ task: event.target.value});
     }
 
-    addToList(task) {
+    addToList() {
         this.props.addItem(this.state.task);
+        document.getElementById('taskBox').value = '';
     }
 
     render() {
         return (
             <div className="InputField">
-                <input type="text" placeholder="enter a task..." onChange={this.handleChange} />
-                <input type="submit" value="Add" onClick={this.addToList} />
+                <input 
+                    id="taskBox" 
+                    type="text" 
+                    placeholder="enter a task..." 
+                    onChange={this.handleChange} 
+                />
+                <input 
+                    id="addButton" 
+                    type="submit" 
+                    value="Add" 
+                    onClick={this.addToList} 
+                />
             </div>
         )
     }

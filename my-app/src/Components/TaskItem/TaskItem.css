@@ -1,0 +1,15 @@
+.TaskItem {
+    display: flex;
+    align-items: center;
+    background-color: rgb(54, 178, 182);
+    justify-content: flex-start;
+    border-radius: 15px;
+    padding: 0px 15px 0px 10px;
+    box-shadow: 4px 5px 5px 0px rgba(0,0,0,0.4);
+    margin: 5px 10px;
+}
+
+.isCompleted {
+    margin-right: 10px;
+    margin-top: 5px;
+}
