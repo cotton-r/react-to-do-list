@@ -3,23 +3,38 @@ import './App.css';
 
 import TabBar from '../TabBar/TabBar';
 import ToDoList from '../ToDoList/ToDoList';
-import TaskItem from '../TaskItem/TaskItem';
+import CompletedList from '../CompletedList/CompletedList';
 
 class App extends React.Component {
   constructor(props) {
     super(props);    
 
     this.state= {
-      tasks: []
-    }
+      tasks: [],
+      completedTasks: []
+    };
 
     this.addItem = this.addItem.bind(this);
+    this.completeItem = this.completeItem.bind(this);
   }
 
   addItem(task) {
     let newStateArray = this.state.tasks.slice();
     newStateArray.unshift(task);
     this.setState({ tasks: newStateArray });
+    console.log(newStateArray)
+  }
+
+  completeItem(taskIndex) {
+    let currentTasks = this.state.tasks;
+    const newItem = currentTasks.filter((item, index) => index == taskIndex);
+    this.setState(currentTasks => ({
+      completedTasks: [...currentTasks.completedTasks, newItem]
+    }));
+    const newTaskList = currentTasks.filter((item, index) => index !== taskIndex);
+    this.setState(currentTasks => ({
+      tasks: newTaskList
+    }))
   }
 
   render() {
@@ -33,8 +48,11 @@ class App extends React.Component {
           <ToDoList 
             addItem={this.addItem}
             tasks={this.state.tasks}
+            onComplete={this.completeItem}
           />
-          {/* <CompletedList /> */}
+          <CompletedList 
+            completedTasks={this.state.completedTasks}
+          />
         </div>
       </div>
     )

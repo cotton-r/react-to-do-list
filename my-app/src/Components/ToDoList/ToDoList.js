@@ -15,10 +15,12 @@ class ToDoList extends React.Component {
                 </div>
                 <div className="itemList">
                     {
-                        this.props.tasks.map(task => {
+                        this.props.tasks.map((task, index) => {
                             return <TaskItem 
                                 task={task}
                                 isCompleted={false}
+                                key={index}
+                                onComplete={() => this.props.onComplete(index)}
                             />
                         })
                     }

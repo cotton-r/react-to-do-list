@@ -4,7 +4,7 @@ import './TaskItem.css';
 class TaskItem extends React.Component {
 
     isCompleted() {
-        if (this.props.completed) {
+        if (this.props.isCompleted) {
             return <input 
                     type="checkbox" 
                     disabled="disabled" 
@@ -12,7 +12,12 @@ class TaskItem extends React.Component {
                     className="isCompleted" 
                 />
         } else {
-            return <input type="checkbox" className="isCompleted" />
+            return <input 
+                    type="checkbox" 
+                    className="isCompleted" 
+                    checked=""
+                    onChange={this.props.onComplete}
+                />
         }
     }
     
