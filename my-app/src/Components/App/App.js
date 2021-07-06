@@ -12,11 +12,15 @@ class App extends React.Component {
 
     this.state= {
       tasks: [],
-      completedTasks: []
+      completedTasks: [],
+      toDoListVisibility: "block",
+      completedListVisibility: "none"
     };
 
     this.addItem = this.addItem.bind(this);
     this.completeItem = this.completeItem.bind(this);
+    this.toggleToDoList = this.toggleToDoList.bind(this);
+    this.toggleCompletedList = this.toggleCompletedList.bind(this);
   }
 
   addItem(task) {
@@ -38,6 +42,17 @@ class App extends React.Component {
     }))
   }
 
+  toggleToDoList() {
+    this.setState({ toDoListVisibility: "block" });
+    this.setState({ completedListVisibility: "none" })
+  }
+
+  toggleCompletedList() {
+      this.setState({ completedListVisibility: "block" });
+      this.setState({ toDoListVisibility: "none" })
+  }
+
+
   render() {
     return (
       <div>
@@ -45,14 +60,19 @@ class App extends React.Component {
           To-Do List
         </h1>
         <div className="App">
-          <TabBar />
+          <TabBar 
+            toggleToDoList={this.toggleToDoList}
+            toggleCompletedList={this.toggleCompletedList}
+          />
           <ToDoList 
             addItem={this.addItem}
             tasks={this.state.tasks}
             onComplete={this.completeItem}
+            toDoListVisibility={this.state.toDoListVisibility}
           />
           <CompletedList 
             completedTasks={this.state.completedTasks}
+            completedListVisibility={this.state.completedListVisibility}
           />
         </div>
       </div>

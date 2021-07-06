@@ -7,7 +7,7 @@ import TaskItem from '../TaskItem/TaskItem';
 class ToDoList extends React.Component {
     render() {
         return (
-            <div>
+            <div style={{display: this.props.toDoListVisibility}}>
                 <div className="InputField">
                     <InputField 
                         addItem={this.props.addItem}
